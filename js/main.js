@@ -24,20 +24,4 @@ function initCopyCode() {
     }
 }
 
-function addObservers() {
-    const targetNode = document.getElementsByTagName('body')[0];
-    const config = { attributes: true, childList: true, subtree: true };
-
-    const observer = new MutationObserver((mutations) => {
-        for (const mutation of mutations) {
-            if (mutation.type === 'childList' || mutation.type === 'characterData') {
-                initCopyCode();
-                observer.disconnect();
-                break;
-            }
-        }
-    });
-    observer.observe(targetNode, config);
-}
-
-setInterval(addObservers, 1000);
+setInterval(initCopyCode, 1000);
