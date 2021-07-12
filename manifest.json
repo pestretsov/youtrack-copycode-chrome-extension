@@ -1,0 +1,16 @@
+{
+  "name": "YouTrack copycode",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "description": "Finally copy only code fragment from YT ticket",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://youtrack.jetbrains.com/*"
+      ],
+      "js": [
+        "js/main.js"
+      ]
+    }
+  ]
+}
